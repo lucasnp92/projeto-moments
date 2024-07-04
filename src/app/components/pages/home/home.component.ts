@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
   searchTerm: string = '';
   faSearch = faSearch;
   dataImage: any;
-
   constructor(private momentService: MomentService) {}
 
   ngOnInit(): void {
@@ -31,8 +30,8 @@ export class HomeComponent implements OnInit {
       const data = items.data;
 
       data.map((item) => {
-        this.dataImage = DateTime.fromISO(item.createdAt).toFormat(
-          'dd/MM/yyyy'
+        item.created_at = new Date(item.created_at!).toLocaleDateString(
+          'pt-br'
         );
       });
 
