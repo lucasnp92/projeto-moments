@@ -7,6 +7,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DatePipe } from '@angular/common';
+import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-home',
@@ -31,13 +32,13 @@ export class HomeComponent implements OnInit {
       const data = items.data;
 
       data.map((item) => {
-        item.created_at = new Date(item.created_at!).toLocaleDateString(
-          'pt-BR'
+        item.created_at = DateTime.fromISO(item.createdAt).toFormat(
+          'dd/MM/yyyy HH:mm:ss'
         );
       });
 
-      this.allMoments = items.data;
-      this.moments = items.data;
+      this.allMoments = data;
+      this.moments = data;
     });
   }
 
