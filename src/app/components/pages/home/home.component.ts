@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DatePipe } from '@angular/common';
 import { DateTime } from 'luxon';
 
 @Component({
@@ -15,7 +14,6 @@ import { DateTime } from 'luxon';
   imports: [CommonModule, RouterLink, RouterOutlet, FontAwesomeModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  providers: [DatePipe],
 })
 export class HomeComponent implements OnInit {
   allMoments: Moment[] = [];
@@ -24,6 +22,7 @@ export class HomeComponent implements OnInit {
 
   searchTerm: string = '';
   faSearch = faSearch;
+  dataImage: any;
 
   constructor(private momentService: MomentService) {}
 
@@ -32,8 +31,8 @@ export class HomeComponent implements OnInit {
       const data = items.data;
 
       data.map((item) => {
-        item.created_at = DateTime.fromISO(item.createdAt).toFormat(
-          'dd/MM/yyyy HH:mm:ss'
+        this.dataImage = DateTime.fromISO(item.createdAt).toFormat(
+          'dd/MM/yyyy'
         );
       });
 
