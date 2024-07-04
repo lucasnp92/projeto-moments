@@ -2,16 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { MomentService } from '../../../services/moment.service';
 import { Moment } from '../../../Moment';
 import { environment } from '../../../../environments/environment';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet],
+  imports: [CommonModule, RouterLink, RouterOutlet, FontAwesomeModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
+  providers: [DatePipe],
 })
 export class HomeComponent implements OnInit {
   allMoments: Moment[] = [];
@@ -35,6 +38,15 @@ export class HomeComponent implements OnInit {
 
       this.allMoments = items.data;
       this.moments = items.data;
+    });
+  }
+
+  search(e: Event): void {
+    const target = e.target as HTMLInputElement;
+    const value = target.value.toLocaleLowerCase();
+
+    this.moments = this.allMoments.filter((moment) => {
+      return moment.title.toLowerCase().includes(value);
     });
   }
 }
