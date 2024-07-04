@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { DateTime } from 'luxon';
 
 @Component({
   selector: 'app-home',
