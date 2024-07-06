@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
 
       data.map((item) => {
         item.created_at = new Date(item.created_at!).toLocaleDateString(
-          'pt-br'
+          'pt-BR'
         );
       });
 

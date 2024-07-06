@@ -19,18 +19,34 @@ import { Moment } from '../../Moment';
 export class MomentFormComponent {
   @Output() onSubmit = new EventEmitter<Moment>();
   @Input() btnText!: string;
+  @Input() momentData: Moment | null = null;
+
+  image?: File;
 
   momentForm!: FormGroup;
 
-  ngOnInit() {
-    this.momentForm = new FormGroup({
-      id: new FormControl(''),
-      title: new FormControl('', [Validators.required]),
-      description: new FormControl('', [Validators.required]),
-      image: new FormControl(''),
-    });
-  }
+  constructor() {}
 
+  ngOnInit(): void {
+    if (this.momentData) {
+      console.log(this.momentData);
+      this.momentForm = new FormGroup({
+        id: new FormControl(this.momentData.id),
+        title: new FormControl(this.momentData.title, [Validators.required]),
+        description: new FormControl(this.momentData.description, [
+          Validators.required,
+        ]),
+        image: new FormControl(''),
+      });
+    } else {
+      this.momentForm = new FormGroup({
+        id: new FormControl(''),
+        title: new FormControl('', [Validators.required]),
+        description: new FormControl('', [Validators.required]),
+        image: new FormControl(''),
+      });
+    }
+  }
   get title() {
     return this.momentForm.get('title')!;
   }
