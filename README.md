@@ -1,27 +1,95 @@
-# Moments
+<h1 align="center">
+    <p>Compartilhe os seus MOMENTOS!🥂<p/>
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.5.
+![preview](./src/assets/projeto.png)
 
-## Development server
+## Índice
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+[Sobre](#🚨-sobre)&nbsp;|
+[Ferramentas](#🔨-ferramentas)&nbsp;|
+[Como Conntribuir](#💻-como-contribuir)&nbsp;|
 
-## Code scaffolding
+<!-- [Licença](#📋-licença)&nbsp;| -->
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🚨 Sobre
 
-## Build
+O projeto Moments é uma aplicação full-stack desenvolvida com Angular para o frontend e AdonisJS para o backend. A aplicação permite que os usuários compartilhem imagens e textos de momentos especiais através de um formulário, com funcionalidades de criar, ler, atualizar e excluir (CRUD).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+As imagens e dados são armazenados em um banco de dados SQLite. A comunicação entre o frontend e o backend é realizada por meio de rotas bem definidas. Este projeto foi desenvolvido para aplicar e demonstrar conhecimentos em Angular, incluindo manipulação de dados em JSON, roteamento, e a construção de componentes de busca e interação com uma [API](https://github.com/lucasnp92/api-moments.git) backend. No backend, utilizamos o AdonisJS para estruturar a API e gerenciar o banco de dados.
 
-## Running unit tests
+Este projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) versão 18.0.5.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🔨 Ferramentas
 
-## Running end-to-end tests
+- Angular
+- TypeScript
+- HTML
+- CSS
+- AdonisJS
+- NodeJS
+- SQLite
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 💻 Como Contribuir
 
-## Further help
+<h3>FRONTEND</h3>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+    # Clone o projeto
+    $ git clone https://github.com/lucasnp92/projeto-moments.git
+```
+
+```bash
+    # Entre no diretório do projeto
+    $ cd projeto-moments
+```
+
+```bash
+    # Instale as dependencias, se você usa npm
+    $ npm install
+```
+
+```bash
+    # Inicie o servidor do desenvolvimento
+    $ npm start
+    # ou
+    $ ng serve
+```
+
+<h3>BACKEND</h3>
+
+```bash
+    # Clone o repositório da API
+    $ git clone https://github.com/lucasnp92/api-moments.git
+```
+
+```bash
+    # Entre no diretório da API
+    $ cd api-moments
+```
+
+```bash
+    # Instale as dependências
+    $ npm install
+```
+
+```bash
+    # Configure o banco de dados SQLite. No arquivo .env, verifique se as configurações estão corretas:
+DB_CONNECTION=sqlite
+DB_DATABASE=./database.sqlite
+```
+
+```bash
+    # Execute as migrações para criar as tabelas no banco de dados:
+    $ node ace migration:run
+```
+
+```bash
+    # Inicie o servidor AdonisJS:
+    $ npm start
+    # ou
+    $ node ace serve
+```
+
+<!-- ## 📋 Licença
+Este projeto está sob licença MIT. Veja o arquivo [LICENSE](https://github.com/lucasnp92/) para mais detalhes. -->
