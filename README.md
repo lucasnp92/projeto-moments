@@ -91,5 +91,9 @@ DB_DATABASE=./database.sqlite
     $ node ace serve
 ```
 
+<h3>Créditos</h3>
+
+Este projeto foi desenvolvido com a ajuda do curso do Matheus Battisti do canal [Hora de Codar](https://www.youtube.com/@MatheusBattisti). Agradecimentos especiais ao Matheus Battisti por fornecer excelentes recursos educacionais.
+
 <!-- ## 📋 Licença
 Este projeto está sob licença MIT. Veja o arquivo [LICENSE](https://github.com/lucasnp92/) para mais detalhes. -->
